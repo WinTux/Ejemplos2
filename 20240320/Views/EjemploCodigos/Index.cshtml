@@ -1,0 +1,10 @@
+﻿<h3>Generando un código QR mediante ASP.NET</h3>
+<form method="post" asp-controller="EjemploCodigos" asp-action="Generar">
+    <input type="text" placeholder="Ingrese su valor" name="valor" value="@ViewBag.valor"><br />
+    <input type="submit" value="Generar" class="btn btn-primary">
+</form>
+
+@if (@ViewBag.valor != null)
+{
+    <codigoqr contenido="@ViewBag.valor" ancho="200" alto="200"/>
+}
